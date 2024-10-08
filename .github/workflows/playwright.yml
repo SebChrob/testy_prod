@@ -4,7 +4,7 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: '0 * * * *' # Uruchamianie co godzinę
+    - cron: '0 0 * * *' # Uruchamianie co godzinę
 
 permissions:
   contents: write
