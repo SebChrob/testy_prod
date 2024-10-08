@@ -73,9 +73,7 @@ test("Logowanie i sprawdzenie konta", async ({ page, browserName }) => {
   console.log(`Czy adresy email się zgadzają?: ${emailsMatch}`);
 
   console.log("Wylogowywanie po teście.");
-  await page.goto("https://yes.pl/customer/account/logout/", {
-    waitUntil: "networkidle",
-  });
+  await page.goto("https://yes.pl/customer/account/logout/");
 
   console.log("Test zakończony.");
 });
