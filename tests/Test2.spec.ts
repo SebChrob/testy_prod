@@ -10,9 +10,12 @@ test("Logowanie i sprawdzenie konta", async ({ page, browserName }) => {
   await page.context().clearPermissions();
 
   // Przejdź do strony biżuterii
-  console.log("Otwieranie strony: /bizuteria");
-  await page.goto("https://yes.pl/", {
-    waitUntil: "networkidle",
+  console.log("Otwieranie strony: /home");
+  await page.goto("https://yes.pl");
+
+  await page.waitForSelector('button[data-href="https://yes.pl/bizuteria"]', {
+    state: "visible",
+    timeout: 120000, // 60 seconds to allow for slower environments
   });
 
   // Sprawdź, czy okno z cookies jest widoczne i zaakceptuj je
